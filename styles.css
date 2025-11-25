@@ -107,7 +107,6 @@ video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
   box-sizing: border-box;
   vertical-align: baseline;
   color: unset;
@@ -207,9 +206,9 @@ section {
 }
 
 .container {
-  max-width: 1180px;
-  padding: 0 10px;
   margin: 0 auto;
+  padding: 0 10px;
+  max-width: 1200px;
 }
 
 .list {
@@ -231,10 +230,10 @@ section {
   font-size: 16px;
   font-weight: 700;
   border-radius: 10px;
-  transition: all 0.5s;
   letter-spacing: 0.12em;
   color: var(--color-white);
   text-transform: uppercase;
+  transition: background 0.5s ease;
   font-family: var(--second-family);
   border: 1px solid var(--background-orange);
   background-color: var(--background-orange);
@@ -249,6 +248,21 @@ section {
   color: var(--color-white);
   text-align: right;
   filter: drop-shadow(0px 0px 6px black);
+}
+
+.arrow {
+  width: 40px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  place-items: center;
+  transition: all 0.8s;
+  color: var(--color-orange);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--background-white);
+  box-shadow: -1px 3px 10px rgba(0, 0, 0, 0.1);
 }
 
 .g-recaptcha {
@@ -573,28 +587,58 @@ section {
 
 /*  
     ----------------------------------
-    8. Images
+    8. Photos
     ----------------------------------
 */
 
-.images {
+.photos {
 }
 
-.images__title {
+.photos__title {
 }
 
-.slider-container {
+.photos-container {
+  margin-top: 62px;
+  max-width: 1330px;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.slider {
+.photos__slider {
+  max-width: 1160px;
+  gap: 30px;
   display: flex;
-  overflow: hidden;
+  overflow-x: hidden;
+  align-items: flex-end;
+  scroll-snap-type: x mandatory;
+  transition: transform 0.5s ease;
 }
 
-.slider__image {
+.photos__slide {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
 }
 
+.photos__image {
+  width: 270px;
+  height: 350px;
+  border-radius: 22px;
+}
+
+.photos__image_top {
+  width: 540px;
+  height: 700px;
+}
+
+.photos__prev {
+  background-image: url("./images/arrow_1.svg");
+  transform: scaleX(-1);
+}
+
+.photos__next {
+  background-image: url("./images/arrow_1.svg");
+}
 /*  
     ----------------------------------
     9. Reviews
@@ -775,7 +819,6 @@ section {
 }
 
 .route__price {
-  
 }
 
 /*  
@@ -807,13 +850,13 @@ section {
 }
 
 .questions__item {
-  border-radius: 10px;
-  padding: 26px 20px;
-  margin-top: 16px;
-  box-shadow: -1px 3px 10px rgba(0, 0, 0, 0.1);
   width: 580px;
-  background: var(--background-white);
   cursor: pointer;
+  margin-top: 16px;
+  padding: 26px 20px;
+  border-radius: 10px;
+  background: var(--background-white);
+  box-shadow: -1px 3px 10px rgba(0, 0, 0, 0.1);
 }
 
 .questions__hero {
@@ -843,7 +886,12 @@ section {
 .questions__answer {
   display: none;
   font-size: 20px;
+  margin-top: 30px;
   color: var(--color-black-lite);
+}
+
+.questions__item.active .questions__answer {
+  display: block;
 }
 
 .questions__image {
@@ -866,6 +914,7 @@ section {
 
 .team__list {
   margin-top: 62px;
+  gap: 14px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -881,7 +930,17 @@ section {
 }
 
 .team__image {
-  transition: all 0.3s ease;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+
+.team__item:hover {
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+.team__item:hover .team__name {
+  display: none;
 }
 
 .team__item:hover .team__image {
@@ -891,6 +950,8 @@ section {
 }
 
 .team__text {
+  margin-top: 16px;
+  line-height: 24px;
 }
 
 .team__name {
@@ -964,20 +1025,23 @@ section {
 }
 
 .booking__consent {
-  margin-top: 24px;
   gap: 12px;
   display: flex;
+  margin-top: 24px;
   align-items: flex-start;
 }
 
 .booking__checkbox {
+  accent-color: var(--background-white);
+  cursor: pointer;
 }
 
 .booking__consent-label {
+  cursor: pointer;
   font-size: 16px;
   color: var(--color-gray);
-  cursor: pointer;
 }
+
 
 /*  
     ----------------------------------

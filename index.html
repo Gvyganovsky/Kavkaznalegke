@@ -114,57 +114,55 @@
     </section>
 
     <section class="benefits">
+      <h2 class="benefits__title title">
+        Получите положительные эмоции от Кавказа вместе с нами
+      </h2>
       <div class="benefits__container container">
-        <h2 class="benefits__title title">
-          Получите положительные эмоции от Кавказа вместе с нами
-        </h2>
-        <div class="benefits__container container">
-          <ul class="benefits__list">
-            <li class="benefits__item benefits__item_margin">
-              <img src="./images/mountain-air.svg" alt="Прогулка на свежем горном воздухе" width="60" height="60"
-                class="benefits__icon" />
-              <p class="benefits__text">
-                Прогуляетесь на свежем горном воздухе
-              </p>
-            </li>
-            <li class="benefits__item">
-              <img src="./images/friends.svg" alt="Встреча с интересными друзьями" width="60" height="60"
-                class="benefits__icon" />
-              <p class="benefits__text">Встретите интересных друзей</p>
-            </li>
-            <li class="benefits__item">
-              <img src="./images/sights.svg" alt="Посещение местных достопримечательностей" width="60" height="60"
-                class="benefits__icon" />
-              <p class="benefits__text">Посетите знаковые места</p>
-            </li>
-            <li class="benefits__item benefits__item_margin">
-              <img src="./images/cuisine.svg" alt="Попробуйте вкуснейшую национальную кухню" width="60" height="60"
-                class="benefits__icon" />
-              <p class="benefits__text">
-                Попробуйте вкуснейшую национальную кухню
-              </p>
-            </li>
-            <li class="benefits__item benefits__item_margin">
-              <img src="./images/nature.svg" alt="Покажите детям, как можно любить природу" width="60" height="60"
-                class="benefits__icon" />
-              <p class="benefits__text">
-                Покажете детям, как можно любить природу
-              </p>
-            </li>
-            <li class="benefits__item">
-              <img src="./images/thermal-springs.svg" alt="Искупайтесь в термальных источниках" width="60" height="60"
-                class="benefits__icon" />
-              <p class="benefits__text">
-                Искупаетесь в термальных источниках
-              </p>
-            </li>
-            <li class="benefits__item benefits__item_center">
-              <img src="./images/longevity-secrets.svg" alt="Узнаете секреты долгожительства" width="60" height="60"
-                class="benefits__icon" />
-              <p class="benefits__text">Узнаете секреты долгожительства</p>
-            </li>
-          </ul>
-        </div>
+        <ul class="benefits__list">
+          <li class="benefits__item benefits__item_margin">
+            <img src="./images/mountain-air.svg" alt="Прогулка на свежем горном воздухе" width="60" height="60"
+              class="benefits__icon" />
+            <p class="benefits__text">
+              Прогуляетесь на свежем горном воздухе
+            </p>
+          </li>
+          <li class="benefits__item">
+            <img src="./images/friends.svg" alt="Встреча с интересными друзьями" width="60" height="60"
+              class="benefits__icon" />
+            <p class="benefits__text">Встретите интересных друзей</p>
+          </li>
+          <li class="benefits__item">
+            <img src="./images/sights.svg" alt="Посещение местных достопримечательностей" width="60" height="60"
+              class="benefits__icon" />
+            <p class="benefits__text">Посетите знаковые места</p>
+          </li>
+          <li class="benefits__item benefits__item_margin">
+            <img src="./images/cuisine.svg" alt="Попробуйте вкуснейшую национальную кухню" width="60" height="60"
+              class="benefits__icon" />
+            <p class="benefits__text">
+              Попробуйте вкуснейшую национальную кухню
+            </p>
+          </li>
+          <li class="benefits__item benefits__item_margin">
+            <img src="./images/nature.svg" alt="Покажите детям, как можно любить природу" width="60" height="60"
+              class="benefits__icon" />
+            <p class="benefits__text">
+              Покажете детям, как можно любить природу
+            </p>
+          </li>
+          <li class="benefits__item">
+            <img src="./images/thermal-springs.svg" alt="Искупайтесь в термальных источниках" width="60" height="60"
+              class="benefits__icon" />
+            <p class="benefits__text">
+              Искупаетесь в термальных источниках
+            </p>
+          </li>
+          <li class="benefits__item benefits__item_center">
+            <img src="./images/longevity-secrets.svg" alt="Узнаете секреты долгожительства" width="60" height="60"
+              class="benefits__icon" />
+            <p class="benefits__text">Узнаете секреты долгожительства</p>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -250,12 +248,89 @@
       </div>
     </section>
 
-    <section class="images">
-      <h2 class="images__title title">ФОТОГРАФИИ С МАРШРУТОВ</h2>
-      <div class="slider-container container">
-        <button class="prev" data-btn-prev>></button>
-        <div class="slider" data-slider></div>
-        <button class="next" data-btn-next>sd</button>
+    <section class="photos">
+      <h2 class="photos__title title">Фотографии с маршрутов</h2>
+      <div class="photos-container container">
+        <button type="button" aria-label="Предыдущий слайд" class="photos__prev arrow" data-prev-photos></button>
+        <div data-slider-photos role="group" aria-label="Слайдер" class="photos__slider">
+          <div class="photos__slide" data-image-photos data-index-photos="0">
+            <img src="./images/gallery-photo-img-01_580x746_802.webp" alt="Человек смотрит в даль" width="270"
+              height="350" loading="lazy" class="photos__image">
+          </div>
+          <div class="photos__slide" data-image-photos data-index-photos="1">
+            <img src="./images/gallery-photo-img-02_580x746_802.webp" alt="Человек смотрит в даль" width="270"
+              height="350" loading="lazy" class="photos__image photos__image_top">
+          </div>
+          <div class="photos__slide" data-image-photos data-index-photos="2">
+            <img src="./images/gallery-photo-img-03_580x746_802.webp" alt="Человек смотрит в даль" width="270"
+              height="350" loading="lazy" class="photos__image">
+          </div>
+          <div class="photos__slide" data-image-photos data-index-photos="3">
+            <img src="./images/gallery-photo-img-04_580x746_802.webp" alt="Человек смотрит в даль" width="270"
+              height="350" loading="lazy" class="photos__image">
+          </div>
+          <div class="photos__slide" data-image-photos data-index-photos="4">
+            <img src="./images/gallery-photo-img-05_580x746_802.webp" alt="Человек смотрит в даль" width="270"
+              height="350" loading="lazy" class="photos__image">
+          </div>
+          <div class="photos__slide" data-image-photos data-index-photos="5">
+            <img src="./images/gallery-photo-img-06_580x746_802.webp" alt="Человек смотрит в даль" width="270"
+              height="350" loading="lazy" class="photos__image">
+          </div>
+          <div class="photos__slide" data-image-photos data-index-photos="6">
+            <img src="./images/gallery-photo-img-07_580x746_802.webp" alt="Человек смотрит в даль" width="270"
+              height="350" loading="lazy" class="photos__image">
+          </div>
+          <div class="photos__slide" data-image-photos data-index-photos="7">
+            <img src="./images/gallery-photo-img-08_580x746_802.webp" alt="Человек смотрит в даль" width="270"
+              height="350" loading="lazy" class="photos__image">
+          </div>
+          <div class="photos__slide" data-image-photos data-index-photos="8">
+            <img src="./images/gallery-photo-img-09_580x746_802.webp" alt="Человек смотрит в даль" width="270"
+              height="350" loading="lazy" class="photos__image">
+          </div>
+          <div class="photos__slide" data-image-photos data-index-photos="9">
+            <img src="./images/gallery-photo-img-10_580x746_802.webp" alt="Человек смотрит в даль" width="270"
+              height="350" loading="lazy" class="photos__image">
+          </div>
+          <div class="photos__slide" data-image-photos data-index-photos="10">
+            <img src="./images/gallery-photo-img-11_580x746_802.webp" alt="Человек смотрит в даль" width="270"
+              height="350" loading="lazy" class="photos__image">
+          </div>
+          <div class="photos__slide" data-image-photos data-index-photos="11">
+            <img src="./images/gallery-photo-img-12_580x746_802.webp" alt="Человек смотрит в даль" width="270"
+              height="350" loading="lazy" class="photos__image">
+          </div>
+          <div class="photos__slide" data-image-photos data-index-photos="12">
+            <img src="./images/gallery-photo-img-13_580x746_802.webp" alt="Человек смотрит в даль" width="270"
+              height="350" loading="lazy" class="photos__image">
+          </div>
+          <div class="photos__slide" data-image-photos data-index-photos="13">
+            <img src="./images/gallery-photo-img-14_580x746_802.webp" alt="Человек смотрит в даль" width="270"
+              height="350" loading="lazy" class="photos__image">
+          </div>
+          <div class="photos__slide" data-image-photos data-index-photos="14">
+            <img src="./images/gallery-photo-img-15_580x746_802.webp" alt="Человек смотрит в даль" width="270"
+              height="350" loading="lazy" class="photos__image">
+          </div>
+          <div class="photos__slide" data-image-photos data-index-photos="15">
+            <img src="./images/gallery-photo-img-16_580x746_802.webp" alt="Человек смотрит в даль" width="270"
+              height="350" loading="lazy" class="photos__image">
+          </div>
+          <div class="photos__slide" data-image-photos data-index-photos="16">
+            <img src="./images/gallery-photo-img-17_580x746_802.webp" alt="Человек смотрит в даль" width="270"
+              height="350" loading="lazy" class="photos__image">
+          </div>
+          <div class="photos__slide" data-image-photos data-index-photos="17">
+            <img src="./images/gallery-photo-img-18_580x746_802.webp" alt="Человек смотрит в даль" width="270"
+              height="350" loading="lazy" class="photos__image">
+          </div>
+          <div class="photos__slide" data-image-photos data-index-photos="18">
+            <img src="./images/gallery-photo-img-19_580x746_802.webp" alt="Человек смотрит в даль" width="270"
+              height="350" loading="lazy" class="photos__image">
+          </div>
+        </div>
+        <button type="button" aria-label="Следующий слайд" class="photos__next arrow" data-next-photos></button>
       </div>
     </section>
 
@@ -575,7 +650,7 @@
           </li>
           <!--
                         <li class="team__item">
-                            <img class="team__image" src="./assets/alena-vasilieva.jpg" alt="Алена Васильева" width="280"
+                            <img class="team__image" src="../images/alena-vasilieva.jpg" alt="Алена Васильева" width="280"
                                 height="360">
                             <p class="team__text">
                                 Алёнка ходит в походы с самого детства, с 7 лет. За всё это время были пройдены тысячи километров :)
@@ -741,7 +816,7 @@
   </footer>
 
   <script src="./scripts.js" defer></script>
-  <script type="text/javascript" src="scripts/api.js"></script>
+  <!-- <script type="text/javascript" src="scripts/api.js"></script> -->
 </body>
 
 </html>

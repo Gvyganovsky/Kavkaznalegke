@@ -1,50 +1,41 @@
 /*  
     ----------------------------------
-    1. Images-slider
+    1. Photos-slider
     ----------------------------------
 */
 
-const images = [
-  "./images/gallery-photo-img-01_580x746_802.webp",
-  "./images/gallery-photo-img-02_580x746_802.webp",
-  "./images/gallery-photo-img-03_580x746_802.webp",
-  "./images/gallery-photo-img-04_580x746_802.webp",
-  "./images/gallery-photo-img-05_580x746_802.webp",
-  "./images/gallery-photo-img-06_580x746_802.webp",
-  "./images/gallery-photo-img-09_580x746_802.webp",
-  "./images/gallery-photo-img-10_580x746_802.webp",
-  "./images/gallery-photo-img-11_580x746_802.webp",
-  "./images/gallery-photo-img-12_580x746_802.webp",
-  "./images/gallery-photo-img-13_580x746_802.webp",
-  "./images/gallery-photo-img-14_580x746_802.webp",
-  "./images/gallery-photo-img-15_580x746_802.webp",
-  "./images/gallery-photo-img-16_580x746_802.webp",
-  "./images/gallery-photo-img-17_580x746_802.webp",
-  "./images/gallery-photo-img-18_580x746_802.webp",
-  "./images/gallery-photo-img-19_580x746_802.webp",
-  "./images/gallery-photo-img-07_580x746_802.webp",
-  "./images/gallery-photo-img-08_580x746_802.webp",
-];
+const sliderPhotos = document.querySelector("[data-slider-photos]");
+const slidesPhotos = sliderPhotos.querySelectorAll("[data-image-photos]");
+const prevPhotos = document.querySelector("[data-prev-photos]");
+const nextPhotos = document.querySelector("[data-next-photos]");
 
-const slider = document.querySelector("[data-slider]");
-const prevBtn = document.querySelector("[data-btn-prev]");
-const nextBtn = document.querySelector("[data-btn-next]");
+let currentIndex = 0;
 
-const sliderFunc = () => {
-  images.forEach((imageUrl, index) => {
-    const img = document.createElement("img");
-    img.src = imageUrl;
-    img.classList.add("slider__image");
-    img.width = 280;
-    img.height = 350;
-    img.dataset.index = index;
-    img.alt = `image + ${index + 1}`;
+function showSlide(index) {
+  if (index < 0) index = slidesPhotos.length - 1;
+  if (index == slidesPhotos.length) index = 0;
 
-    slider.appendChild(img);
+  currentIndex = index;
+
+  slidesPhotos.forEach((item) => {
+    const img = item.querySelector(".photos__image");
+    if (parseInt(item.dataset.indexPhotos, 10) === currentIndex + 1) {
+      img.classList.add("photos__image_top");
+    } else {
+      img.classList.remove("photos__image_top");
+    }
   });
-};
 
-sliderFunc();
+  slidesPhotos[currentIndex].scrollIntoView({
+    behavior: "smooth",
+    block: "nearest",
+  });
+}
+
+prevPhotos.addEventListener("click", () => showSlide(currentIndex - 1));
+nextPhotos.addEventListener("click", () => showSlide(currentIndex + 1));
+
+showSlide(0);
 
 /*  
     ----------------------------------
@@ -52,4 +43,17 @@ sliderFunc();
     ----------------------------------
 */
 
-const questionsItems = [];
+const questions = document.querySelectorAll(".questions__item");
+
+questions.forEach((item) => {
+  item.addEventListener("click", function () {
+    const icon = this.querySelector(".questions__icon");
+    this.classList.toggle("active");
+
+    if (this.classList.contains("active")) {
+      icon.textContent = "−";
+    } else {
+      icon.textContent = "+";
+    }
+  });
+});
