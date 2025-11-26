@@ -19,9 +19,9 @@
         <img src="./images/logo.svg" alt="Логотип" width="246" height="60" class="header__logo" />
         <nav class="header__nav">
           <ul class="header__list list">
-            <li class="header__item">Преимущества</li>
-            <li class="header__item">Маршруты</li>
-            <li class="header__item">Наша команда</li>
+            <li class="header__item"><a href="#features">Преимущества</a></li>
+            <li class="header__item"><a href="#routes">Маршруты</a></li>
+            <li class="header__item"><a href="#team">Наша команда</a></li>
           </ul>
         </nav>
         <div class="header__contact">
@@ -166,7 +166,7 @@
       </div>
     </section>
 
-    <section class="features">
+    <section class="features" id="features">
       <div class="features__container container">
         <p class="features__subtitle">Экскурсии по Кавказу</p>
         <h2 class="features__title title">
@@ -181,7 +181,7 @@
             </p>
           </li>
           <li class="features__item">
-            <img class="features__image" src="./images/human-animals.jpg" alt="Человек с животными" width="280"
+            <img class="features__image" src="./images/human-animals.webp" alt="Человек с животными" width="280"
               height="280" />
           </li>
           <li class="features__item">
@@ -190,15 +190,15 @@
             <p class="features__text">Крепкий сон<br />в кровати</p>
           </li>
           <li class="features__item">
-            <img class="features__image" src="./images/woman-nature.png" alt="Женщина на природе" width="280"
+            <img class="features__image" src="./images/woman-nature.webp" alt="Женщина на природе" width="280"
               height="280" />
           </li>
           <li class="features__item">
-            <img class="features__image" src="./images/people-nature.jpg" alt="Люди на природе" width="280"
+            <img class="features__image" src="./images/people-nature.webp" alt="Люди на природе" width="280"
               height="280" />
           </li>
           <li class="features__item features__item_big">
-            <img class="features__image" src="./images/horse-people.jpg" alt="Люди на лошадях" width="580"
+            <img class="features__image" src="./images/horse-people.webp" alt="Люди на лошадях" width="580"
               height="280" />
           </li>
           <li class="features__item">
@@ -214,7 +214,7 @@
             </p>
           </li>
           <li class="features__item">
-            <img class="features__image" src="./images/mountain-landscape.jpg" alt="Горы" width="280" height="280" />
+            <img class="features__image" src="./images/mountain-landscape.webp" alt="Горы" width="280" height="280" />
           </li>
           <li class="features__item">
             <img class="features__image" src="./images/warm-shower.svg" alt="Теплый душ после целого дня в пути"
@@ -224,7 +224,7 @@
             </p>
           </li>
           <li class="features__item">
-            <img class="features__image" src="./images/people-hiking.jpg" alt="Люди в походе" width="280"
+            <img class="features__image" src="./images/people-hiking.webp" alt="Люди в походе" width="280"
               height="280" />
           </li>
           <li class="features__item">
@@ -233,7 +233,7 @@
             <p class="features__text">Обед под открытым<br />небом</p>
           </li>
           <li class="features__item features__item_big">
-            <img class="features__image" src="./images/couple-nature.jpg" alt="Пара на природе" width="580"
+            <img class="features__image" src="./images/couple-nature.webp" alt="Пара на природе" width="580"
               height="280" />
           </li>
           <li class="features__item">
@@ -248,10 +248,10 @@
       </div>
     </section>
 
-    <section class="photos">
+    <!-- <section class="photos">
       <h2 class="photos__title title">Фотографии с маршрутов</h2>
       <div class="photos-container container">
-        <button type="button" aria-label="Предыдущий слайд" class="photos__prev arrow" data-prev-photos></button>
+        <button type="button" aria-label="Предыдущий слайд" class="arrow arrow_prev" data-prev-photos></button>
         <div data-slider-photos role="group" aria-label="Слайдер" class="photos__slider">
           <div class="photos__slide" data-image-photos data-index-photos="0">
             <img src="./images/gallery-photo-img-01_580x746_802.webp" alt="Человек смотрит в даль" width="270"
@@ -330,83 +330,35 @@
               height="350" loading="lazy" class="photos__image">
           </div>
         </div>
-        <button type="button" aria-label="Следующий слайд" class="photos__next arrow" data-next-photos></button>
+        <button type="button" aria-label="Следующий слайд" class="arrow arrow_next" data-next-photos></button>
       </div>
-    </section>
+    </section> -->
 
-    <section class="reviews">
+    <!-- <section class="reviews">
       <div class="reviews__container container">
         <div class="reviews__controls">
           <h2 class="reviews__title title">Наши отзывы</h2>
           <div class="reviews__navigation">
-            <div class="slider__nav-btn"></div>
-            <div class="slider__nav-btn"></div>
+            <div class="arrow arrow_prev" data-reviews-prev></div>
+            <div class="arrow arrow_next" data-reviews-next></div>
           </div>
           <button class="reviews__button button">
             Отправить отзыв
           </button>
         </div>
 
-        <div class="reviews__slider">
-          <div class="reviews__star">
-            <img src="./images/star.svg" alt="Звезда" width="18" height="18" class="reviews__icon" />
-            <p class="reviews__rating">5</p>
-          </div>
-
-          <h3 class="reviews__name">Юлия</h3>
-          <p class="reviews__date">26.08.2024</p>
-
-          <p class="reviews__text">
-            Это было здорово! Все, абсолютно все, до мелочей. Отпуск
-            удался на славу, масса впечатлений останется надолго в
-            памяти и сердце. Инструкторы Андрей и Анечка-мастера
-            своего дела, душевные ребята, заботились о каждом из нас,
-            как о родных. Гостиница Альпина-персонал отзывчивый,
-            номера чистые, есть все необходимое, кормят вкусно и
-            сытно. Потрясающие виды, чистый воздух, реки, леса, ручьи,
-            горы, ГОРЫ… Без сомнений буду рекомендовать друзьям данный
-            вид отдыха.
-          </p>
-
-          <ul class="reviews__list list">
-            <li class="reviews__item">
-              <a href="./images/ulia5.jpeg" data-fancybox="gallery">
-                <img src="./images/ulia5.jpeg" alt="" width="80" height="80" />
-              </a>
-            </li>
-            <li class="reviews__item">
-              <a href="./images/ulia6.jpeg" data-fancybox="gallery">
-                <img src="./images/ulia6.jpeg" alt="" width="80" height="80" />
-              </a>
-            </li>
-            <li class="reviews__item">
-              <a href="./images/ulia1.jpeg" data-fancybox="gallery">
-                <img src="./images/ulia1.jpeg" alt="ulia1.jpeg" width="80" height="80" />
-              </a>
-            </li>
-            <li class="reviews__item">
-              <a href="./images/ulia2.jpeg" data-fancybox="gallery">
-                <img src="./images/ulia2.jpeg" alt="" width="80" height="80" />
-              </a>
-            </li>
-            <li class="reviews__item">
-              <a href="./images/ulia3.jpeg" data-fancybox="gallery">
-                <img src="./images/ulia3.jpeg" alt="" width="80" height="80" />
-              </a>
-            </li>
-          </ul>
-        </div>
+        <div class="reviews__slider" data-reviews-slider></div>
       </div>
-    </section>
+    </section> -->
 
-    <section class="routes">
+    <section class="routes" id="routes">
       <div class="routes__container container">
         <h2 class="routes__title title">
           Маршруты и походы по Северному Кавказу
         </h2>
 
         <div class="routes__content">
-          <img src="./images/dombai.jpg" alt="Фотография с маршрута" class="routes__image">
+          <img src="./images/dombai.webp" alt="Фотография с маршрута" class="routes__image">
 
           <div class="route">
             <ul class="route__info list">
@@ -441,8 +393,8 @@
             </div>
 
             <div class="route__price">
-              <span class="route__price-text">стоимость</span>
-              <span class="routes__price">от 33 400 ₽</span>
+              <span class="route__price-cost">стоимость</span>
+              <span class="route__price-number">от 33 400 ₽</span>
             </div>
 
             <p class="route__description">
@@ -512,6 +464,9 @@
               </li>
             </ul>
           </div>
+
+          <button class="routes__prev arrow arrow_prev"></button>
+          <button class="routes__next arrow arrow_next"></button>
         </div>
       </div>
     </section>
@@ -604,12 +559,12 @@
       </div>
     </section>
 
-    <section class="team">
+    <section class="team" id="team">
       <div class="team__container container">
         <h2 class="team__title title">Наша команда</h2>
         <ul class="team__list list">
           <li class="team__item">
-            <img class="team__image" src="./images/ilya-troitsky.jpg" alt="Илья Троицкий" width="280" height="360" />
+            <img class="team__image" src="./images/ilya-troitsky.webp" alt="Илья Троицкий" width="280" height="360" />
             <p class="team__text">
               С детских лет ходит в походы, любимые места в горах — плато
               Лаго-Наки и окрестности. Ходил по знаменитому с советских
@@ -632,12 +587,12 @@
             <p class="team__name">Илья Троицкий</p>
           </li>
           <li class="team__item">
-            <img class="team__image" src="./images/sergey-lutsenko.jpg" alt="Сергей Луценко" width="280" height="360" />
+            <img class="team__image" src="./images/sergey-lutsenko.webp" alt="Сергей Луценко" width="280" height="360" />
             <p class="team__text">Горы любят тех кто любит Горы!</p>
             <p class="team__name">Сергей Луценко</p>
           </li>
           <li class="team__item">
-            <img class="team__image" src="./images/elvira-boiko.jpg" alt="Эльвира Бойко" width="280" height="360" />
+            <img class="team__image" src="./images/elvira-boiko.webp" alt="Эльвира Бойко" width="280" height="360" />
             <p class="team__text">
               Эльвира прекрасно чувствует людей, позитивная,
               высокоорганизованная. Не даст сесть в "лужу" даже если очень
@@ -650,7 +605,7 @@
           </li>
           <!--
                         <li class="team__item">
-                            <img class="team__image" src="../images/alena-vasilieva.jpg" alt="Алена Васильева" width="280"
+                            <img class="team__image" src="../images/alena-vasilieva.webp" alt="Алена Васильева" width="280"
                                 height="360">
                             <p class="team__text">
                                 Алёнка ходит в походы с самого детства, с 7 лет. За всё это время были пройдены тысячи километров :)
@@ -660,7 +615,7 @@
                         </li>
                         -->
           <li class="team__item">
-            <img class="team__image" src="./images/mariya-serebryakova.jpg" alt="Мария Серебрякова" width="280"
+            <img class="team__image" src="./images/mariya-serebryakova.webp" alt="Мария Серебрякова" width="280"
               height="360" />
             <p class="team__text">
               Люблю ходить в горы, узнавать новые места и новых людей. Я
@@ -671,7 +626,7 @@
             <p class="team__name">Мария Серебрякова</p>
           </li>
           <li class="team__item">
-            <img class="team__image" src="./images/natalya-pavlova.jpg" alt="Наталья Павлова" width="280"
+            <img class="team__image" src="./images/natalya-pavlova.webp" alt="Наталья Павлова" width="280"
               height="360" />
             <p class="team__text">
               Считаю, что не обязательно тащить тяжелый рюкзак, чтобы
@@ -685,7 +640,7 @@
             <p class="team__name">Наталья Павлова</p>
           </li>
           <li class="team__item">
-            <img class="team__image" src="./images/olga-ishkova.jpg" alt="Ольга Ишкова" width="280" height="360" />
+            <img class="team__image" src="./images/olga-ishkova.webp" alt="Ольга Ишкова" width="280" height="360" />
             <p class="team__text">
               С детства мечтала быть путешественницей) Люблю горы, облака,
               леса, бескрайние степи. Люблю ходить по нехоженым дорожкам). А
@@ -698,7 +653,7 @@
             <p class="team__name">Ольга Ишкова</p>
           </li>
           <li class="team__item">
-            <img class="team__image" src="./images/sergey-nelzin.jpg" alt="Сергей Нельзин" width="280" height="360" />
+            <img class="team__image" src="./images/sergey-nelzin.webp" alt="Сергей Нельзин" width="280" height="360" />
             <p class="team__text">
               Прекрасный инструктор и замечательный человек – вдохновит вас
               на подвиг и с удовольствием залезет с вами на любую гору :-) У
@@ -711,7 +666,7 @@
             <p class="team__name">Сергей Нельзин</p>
           </li>
           <li class="team__item">
-            <img class="team__image" src="./images/oksana-bessonova.jpg" alt="Оксана Бессонова" width="280"
+            <img class="team__image" src="./images/oksana-bessonova.webp" alt="Оксана Бессонова" width="280"
               height="360" />
             <p class="team__text">
               Очень любит походы и стремится поделиться этой любовью с
@@ -729,7 +684,7 @@
 
     <section class="booking">
       <div class="booking__container container">
-        <img src="./images/book-tour.png" alt="Бронирование" width="680" height="830" class="booking__image" />
+        <img src="./images/book-tour.webp" alt="Бронирование" width="680" height="830" class="booking__image" />
         <form action="" method="post" class="booking__form">
           <h2 class="booking__title title">Забронируйте тур прямо сейчас</h2>
           <p class="booking__text"> Также можно получить более подробную информацию по телефону
@@ -767,11 +722,10 @@
   <footer class="footer">
     <div class="footer__container container">
       <img src="./images/footer-logo.svg" alt="Логотип" title="Логотип" width="210" height="115" class="footer__logo" />
-
       <ul class="footer__list">
-        <li class="footer__item">Преимущества</li>
-        <li class="footer__item">Маршруты</li>
-        <li class="footer__item">Наша команда</li>
+        <li class="footer__item"><a href="#features">Преимущества</a></li>
+        <li class="footer__item"><a href="#routes">Маршруты</a></li>
+        <li class="footer__item"><a href="#team">Наша команда</a></li>
         <li class="footer__item">Политика конфиденциальности</li>
       </ul>
 

@@ -6,13 +6,13 @@
     5. About
     6. Benefits
     7. Features
-    8. Images
-    9. Questions
-    10. Team
-
-
-    *. Footer
-
+    8. Photos
+    9. Reviews
+    10. Routes
+    11. Questions
+    12. Team
+    13. Booking
+    14. Footer
     ----------------------------------
  */
 
@@ -173,6 +173,14 @@ table {
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Inter";
+  src: url("./fonts/inter.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 /*  
     ----------------------------------
     3. Default styles 
@@ -193,8 +201,9 @@ table {
   --background-white: #ffffff;
 
   /* Шрифты */
-  --font-family-primary: "Circle", sans-serif;
-  --font-family-secondary: "Bitcrusher" sans-serif;
+  --font-family-primary: "Cirle", sans-serif;
+  --font-family-secondary: "Inter", sans-serif;
+  --font-family-header: "Bitcrusher", sans-serif;
 }
 
 body {
@@ -234,7 +243,7 @@ section {
   color: var(--color-white);
   text-transform: uppercase;
   transition: background 0.5s ease;
-  font-family: var(--second-family);
+  font-family: var(--font-family-secondary);
   border: 1px solid var(--background-orange);
   background-color: var(--background-orange);
 }
@@ -265,6 +274,15 @@ section {
   box-shadow: -1px 3px 10px rgba(0, 0, 0, 0.1);
 }
 
+.arrow_prev {
+  background-image: url("./images/arrow_1.svg");
+  transform: scaleX(-1);
+}
+
+.arrow_next {
+  background-image: url("./images/arrow_1.svg");
+}
+
 .g-recaptcha {
   margin-top: 20px;
 }
@@ -293,12 +311,6 @@ section {
   justify-content: space-between;
 }
 
-.header__logo {
-}
-
-.header__nav {
-}
-
 .header__list {
   gap: 60px;
   justify-content: space-between;
@@ -308,6 +320,10 @@ section {
   font-size: 18px;
   color: var(--color-white);
   text-shadow: -3px 3px 9px rgba(0, 0, 0, 0.25);
+}
+
+.header__item a {
+  text-decoration: none;
 }
 
 .header__contact {
@@ -321,9 +337,6 @@ section {
   color: var(--color-white);
 }
 
-.header__hero {
-}
-
 .header__title {
   font-size: 84px;
   font-weight: 700;
@@ -331,7 +344,7 @@ section {
   margin-top: 60px;
   letter-spacing: 0.01em;
   color: var(--color-white);
-  font-family: var(--font-family-secondary);
+  font-family: var(--font-family-header);
   text-shadow: 0 2px 2px rgba(0, 0, 0, 0.15), 2px 0 2px rgba(0, 0, 0, 0.15);
 }
 
@@ -378,9 +391,6 @@ section {
     ----------------------------------
 */
 
-.about {
-}
-
 .about__container {
   display: flex;
   align-items: center;
@@ -394,7 +404,7 @@ section {
 .about__title-description {
   font-size: 40px;
   font-weight: 600;
-  font-family: var(--second-family);
+  font-family: var(--font-family-secondary);
   padding-left: 68px;
   background-position: left;
   background-repeat: no-repeat;
@@ -411,9 +421,6 @@ section {
 .about__gray-line {
   border: 1px solid rgba(0, 0, 0, 0.11);
   height: 210px;
-}
-
-.about__date {
 }
 
 .about__date-title {
@@ -475,9 +482,6 @@ section {
   position: relative;
 }
 
-.benefits__container {
-}
-
 .benefits__title {
   font-weight: 600;
   font-size: 38px;
@@ -530,12 +534,6 @@ section {
     ----------------------------------
 */
 
-.features {
-}
-
-.features__container {
-}
-
 .features__subtitle {
   font-size: 22px;
   font-weight: 600;
@@ -568,12 +566,9 @@ section {
   grid-column: 2 / 4;
 }
 
-.features__image {
-}
-
 .features__text {
   max-width: 240px;
-  font-family: var(--second-family);
+  font-family: var(--font-family-secondary);
   font-size: 20px;
   margin-top: -44px;
 }
@@ -590,12 +585,6 @@ section {
     8. Photos
     ----------------------------------
 */
-
-.photos {
-}
-
-.photos__title {
-}
 
 .photos-container {
   margin-top: 62px;
@@ -630,32 +619,23 @@ section {
   width: 540px;
   height: 700px;
 }
-
-.photos__prev {
-  background-image: url("./images/arrow_1.svg");
-  transform: scaleX(-1);
-}
-
-.photos__next {
-  background-image: url("./images/arrow_1.svg");
-}
 /*  
     ----------------------------------
     9. Reviews
     ----------------------------------
 */
 
-.reviews {
-}
-
 .reviews__container {
+  gap: 135px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .reviews__controls {
+  z-index: 1;
   max-width: 280px;
+  background-color: var(--background-white);
 }
 
 .reviews__title {
@@ -683,6 +663,12 @@ section {
 }
 
 .reviews__slider {
+  gap: 24px;
+  z-index: 2;
+  display: flex;
+}
+
+.reviews__slide {
   border-radius: 10px;
   padding: 16px;
   width: 380px;
@@ -720,34 +706,31 @@ section {
 
 .reviews__date {
   font-size: 16px;
+  margin-top: 6px;
   color: var(--color-gray);
 }
 
 .reviews__text {
+  height: 300px;
   font-size: 18px;
   margin-top: 16px;
   overflow-y: auto;
+  line-height: 20px;
 }
 
 .reviews__list {
   gap: 8px;
   margin-top: 16px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  flex-wrap: nowrap;
 }
 
 /*  
     ----------------------------------
-    *. Routes
+    10. Routes
     ----------------------------------
 */
-
-.routes {
-}
-
-.routes__container {
-}
-
-.routes__title {
-}
 
 .routes__content {
   gap: 18px;
@@ -755,14 +738,14 @@ section {
   height: 640px;
   padding: 16px;
   margin-top: 62px;
+  position: relative;
   border-radius: 10px;
   box-shadow: -1px 3px 10px rgba(0, 0, 0, 0.1);
 }
 
-.routes__image {
-}
-
 .route {
+  overflow-y: auto;
+  scroll-behavior: smooth;
 }
 
 .route__info {
@@ -770,11 +753,12 @@ section {
 }
 
 .route__info-item {
-  padding: 4px 12px;
-  display: flex;
   gap: 14px;
-  flex-wrap: nowrap;
+  display: flex;
   font-size: 16px;
+  padding: 4px 12px;
+  flex-wrap: nowrap;
+  align-items: center;
   white-space: nowrap;
   border-radius: 28px;
   background: linear-gradient(143deg, #ffb987 0%, #ff8a35 51.5%, #ff8a35 100%);
@@ -798,9 +782,10 @@ section {
 }
 
 .route__difficulty-text {
-  font-family: var(--second-family);
   font-weight: 500;
+  font-size: 12px;
   margin-right: 10px;
+  font-family: var(--font-family-secondary);
 }
 
 .route__difficulty-list {
@@ -819,19 +804,71 @@ section {
 }
 
 .route__price {
+  margin-top: 10px;
+}
+
+.route__price-cost {
+  font-size: 12px;
+  font-weight: 500;
+  margin-right: 10px;
+  font-family: var(--font-family-secondary);
+}
+
+.route__price-number {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ff8a35;
+}
+
+.route__description {
+  font-family: var(--font-family-secondary);
+  font-size: 18px;
+  line-height: 122%;
+  color: var(--color-black-lite);
+  margin-top: 28px;
+}
+
+.route__places-list {
+  gap: 10px;
+  margin-top: 36px;
+}
+
+.route__places-item {
+  gap: 12px;
+  display: flex;
+  padding: 4px 12px;
+  align-items: center;
+  border-radius: 28px;
+  justify-content: center;
+  box-shadow: -1px 3px 4px rgba(0, 0, 0, 0.1);
+}
+
+.route__place {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 170%;
+  text-transform: uppercase;
+  color: var(--color-orange);
+  font-family: var(--font-family-secondary);
+}
+
+.routes__prev {
+  position: absolute;
+  top: 50%;
+  left: -60px;
+}
+
+.routes__next {
+  position: absolute;
+  top: 50%;
+  right: -60px;
 }
 
 /*  
     ----------------------------------
-    *. Questions
+    11. Questions
     ----------------------------------
 */
-
-.questions {
-}
-
-.questions__container {
-}
 
 .questions__title {
   max-width: 485px;
@@ -894,23 +931,11 @@ section {
   display: block;
 }
 
-.questions__image {
-}
-
 /*  
     ----------------------------------
-    8. Team
+    12. Team
     ----------------------------------
 */
-
-.team {
-}
-
-.team__container {
-}
-
-.team__title {
-}
 
 .team__list {
   margin-top: 62px;
@@ -967,15 +992,12 @@ section {
 
 /*  
     ----------------------------------
-    *. Booking
+    13. Booking
     ----------------------------------
 */
 
 .booking {
   padding-bottom: 110px;
-}
-
-.booking {
 }
 
 .booking__container {
@@ -1042,10 +1064,9 @@ section {
   color: var(--color-gray);
 }
 
-
 /*  
     ----------------------------------
-    *. Footer
+    14. Footer
     ----------------------------------
 */
 
@@ -1060,9 +1081,6 @@ section {
   padding: 34px 0;
 }
 
-.footer__logo {
-}
-
 .footer__list {
   gap: 20px;
   display: grid;
@@ -1071,6 +1089,10 @@ section {
 .footer__item {
   font-size: 16px;
   color: var(--color-white);
+}
+
+.footer__item a {
+  text-decoration: none;
 }
 
 .footer__item_title {
@@ -1083,9 +1105,6 @@ section {
   gap: 12px;
   display: flex;
   align-items: center;
-}
-
-.social-network {
 }
 
 .social-network__title {
@@ -1104,6 +1123,13 @@ section {
 
 .footer__bottom {
   display: flex;
+  color: #ffe2cc;
   justify-content: space-between;
-  border-top: 1px solid var(--color-gray);
+  border-top: 1px solid #fff2;
 }
+
+/*  
+    ----------------------------------
+    Media
+    ----------------------------------
+*/
