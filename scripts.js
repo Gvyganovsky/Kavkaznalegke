@@ -4,6 +4,35 @@
     ----------------------------------
 */
 
+const burger = document.querySelector("[data-burger]");
+const burgerNav = document.querySelector("[data-burger-nav]");
+const burgerLinks = burgerNav.querySelectorAll("a");
+
+burger.addEventListener("click", () => {
+  burger.classList.toggle("burger_active");
+  burgerNav.classList.toggle("burger-nav_active");
+
+  if (burger.classList.contains("burger_active")) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "";
+  }
+});
+
+burgerLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    burger.classList.remove("burger_active");
+    burgerNav.classList.remove("burger-nav_active");
+    document.body.style.overflow = "";
+  });
+});
+
+/*  
+    ----------------------------------
+    2. Photos
+    ----------------------------------
+*/
+
 const sliderPhotos = document.querySelector("[data-slider-photos]");
 const slidesPhotos = sliderPhotos.querySelectorAll("[data-image-photos]");
 const prevPhotos = document.querySelector("[data-prev-photos]");
@@ -33,7 +62,7 @@ function updateDots() {
 function updateTopImage() {
   slidesPhotos.forEach((item, index) => {
     const img = item.querySelector(".photos__image");
-    if (index === currentIndex + 1) {
+    if (index === currentIndex) {
       img.classList.add("photos__image_top");
     } else {
       img.classList.remove("photos__image_top");
@@ -63,7 +92,7 @@ showSlide();
 
 /*  
     ----------------------------------
-    2. Reviews
+    3. Reviews
     ----------------------------------
 */
 
@@ -218,7 +247,7 @@ showReviews();
 
 /*  
     ----------------------------------
-    3. Routes
+    4. Routes
     ----------------------------------
 */
 
@@ -525,6 +554,10 @@ const createRoute = () => {
 
       <p class="route__description">${item.description}</p>
 
+      <img src="${item.image.src}" alt="${
+      item.image.alt
+    }" class="route__image_adapt" />
+
       <ul class="route__places-list list">
         ${item.places
           .map(
@@ -565,7 +598,7 @@ nextRoutes.addEventListener("click", () => {
 
 /*  
     ----------------------------------
-    4. Questions
+    5. Questions
     ----------------------------------
 */
 

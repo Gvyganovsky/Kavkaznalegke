@@ -197,6 +197,7 @@ table {
   --color-gray-dark: #fff2;
   --color-black-lite: #3d3d3d;
 
+  --background-black: #000000;
   --background-orange: #ff8a35;
   --background-white: #ffffff;
 
@@ -212,6 +213,75 @@ body {
 
 section {
   padding-top: 110px;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+}
+
+.burger {
+  gap: 5px;
+  z-index: 2;
+  border: none;
+  display: none;
+  cursor: pointer;
+  background: none;
+  flex-direction: column;
+}
+
+.burger span {
+  width: 25px;
+  height: 3px;
+  display: block;
+  background-color: var(--background-white);
+}
+
+.burger .burger_active span {
+  background-color: var(--background-black);
+}
+
+.burger_active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger_active span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger_active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.burger span {
+  transition: all 0.5s ease;
+}
+
+.burger-nav {
+  display: none;
+  flex-direction: column;
+  place-content: center;
+  width: 100%;
+  height: 110%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  position: absolute;
+  text-align: center;
+  background-color: var(--background-white);
+}
+
+.burger-nav_active {
+  display: flex;
+}
+
+.burger-nav__item {
+  font-size: 48px;
+  margin: 24px;
+}
+
+.burger-nav__item a {
+  text-decoration: none;
 }
 
 .container {
@@ -251,6 +321,11 @@ section {
 .button:hover {
   color: var(--background-orange);
   background-color: var(--background-white);
+}
+
+.main-background {
+  background-size: cover;
+  background-image: url("./images/body-bg.webp");
 }
 
 .work-hours {
@@ -423,7 +498,7 @@ section {
 }
 
 .about__gray-line {
-  border: 1px solid rgba(0, 0, 0, 0.11);
+  border-left: 1px solid rgba(0, 0, 0, 0.11);
   height: 210px;
 }
 
@@ -443,15 +518,15 @@ section {
 }
 
 .about__stat-list {
-  padding-top: 50px;
-  display: flex;
-  align-items: center;
+  gap: 24px;
+  margin-top: 50px;
   justify-content: space-between;
 }
 
 .about__stat-item {
   gap: 16px;
   display: flex;
+  padding: 24px 0;
   align-items: center;
 }
 
@@ -560,8 +635,9 @@ section {
 }
 
 .features__item {
-  border-radius: 25px;
   display: grid;
+  min-width: 280px;
+  border-radius: 25px;
   place-items: center;
   text-align: center;
   box-shadow: -1px 3px 10px 0 rgba(0, 0, 0, 0.1);
@@ -590,6 +666,24 @@ section {
     8. Photos
     ----------------------------------
 */
+
+.photos {
+  position: relative;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.texture-left {
+  top: 30px;
+  left: 360px;
+  position: absolute;
+}
+
+.texture-right {
+  right: 0;
+  top: -20px;
+  position: absolute;
+}
 
 .photos__container {
   display: flex;
@@ -624,6 +718,18 @@ section {
 .photos__image_top {
   width: 540px;
   height: 700px;
+}
+
+.photos__prev {
+  position: absolute;
+  top: 50%;
+  left: -60px;
+}
+
+.photos__next {
+  position: absolute;
+  top: 50%;
+  right: -60px;
 }
 
 .photos__dots {
@@ -670,7 +776,6 @@ section {
 
 .reviews__controls {
   max-width: 280px;
-  background-color: var(--background-white);
 }
 
 .reviews__title {
@@ -777,6 +882,10 @@ section {
   position: relative;
 }
 
+.route__image_adapt {
+  display: none;
+}
+
 .routes__viewport {
   overflow: hidden;
   height: 640px;
@@ -785,8 +894,8 @@ section {
 }
 
 .routes__slider {
-  display: flex;
   height: 100%;
+  display: flex;
   transition: transform 1s ease;
 }
 
@@ -795,6 +904,7 @@ section {
   display: flex;
   padding: 16px;
   min-width: 100%;
+  background-color: var(--background-white);
 }
 
 .route__info {
@@ -919,6 +1029,19 @@ section {
   right: -60px;
 }
 
+.routes__button-block {
+  margin-top: 35px;
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.routes__button {
+  width: 380px;
+  height: 55px;
+}
+
 /*  
     ----------------------------------
     11. Questions
@@ -964,13 +1087,13 @@ section {
 }
 
 .questions__icon {
-  display: grid;
-  place-items: center;
-  width: 40px;
   height: 40px;
-  border-radius: 50%;
+  display: grid;
+  min-width: 40px;
   font-size: 26px;
   font-weight: bold;
+  border-radius: 50%;
+  place-items: center;
   color: var(--color-white);
   background-color: var(--background-orange);
 }
@@ -1005,12 +1128,13 @@ section {
 }
 
 .team__item {
-  width: 280px;
   height: 360px;
   cursor: pointer;
+  min-width: 280px;
   overflow: hidden;
   position: relative;
   border-radius: 10px;
+  background-color: var(--background-white);
 }
 
 .team__image {
@@ -1021,6 +1145,10 @@ section {
 .team__item:hover {
   overflow-y: scroll;
   scroll-behavior: smooth;
+}
+
+.team__item:hover {
+  padding: 16px;
 }
 
 .team__item:hover .team__name {
@@ -1142,7 +1270,7 @@ section {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr;
-  padding: 34px 0;
+  padding: 34px 10px;
 }
 
 .footer__list {
@@ -1199,4 +1327,160 @@ section {
 */
 
 @media (max-width: 1366px) {
+  .texture-left {
+    left: 0;
+  }
+
+  .photos__prev {
+    top: 100%;
+    left: 40px;
+    margin-top: 20px;
+  }
+
+  .photos__next {
+    top: 100%;
+    right: 40px;
+    margin-top: 20px;
+  }
+
+  .reviews__container {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .reviews__title {
+    text-align: center;
+  }
+
+  .reviews__navigation {
+    gap: 48px;
+    justify-content: center;
+  }
+
+  .reviews__button {
+    display: block;
+    margin: 24px auto;
+  }
+
+  .reviews__controls {
+    max-width: none;
+  }
+
+  .routes__viewport {
+    height: 100%;
+  }
+
+  .route__image {
+    display: none;
+  }
+
+  .route__description {
+    height: auto;
+    max-height: none;
+  }
+
+  .route__image_adapt {
+    display: block;
+    margin: 0 auto;
+    margin-top: 24px;
+  }
+
+  .route__places-list {
+    max-height: none;
+    margin: 24px 0 0;
+  }
+
+  .routes__prev {
+    top: 100%;
+    left: 40px;
+    margin-top: 41px;
+  }
+
+  .routes__next {
+    top: 100%;
+    right: 40px;
+    margin-top: 41px;
+  }
+
+  .footer__container {
+    gap: 48px;
+    justify-content: space-between;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1200px) {
+  .header__bottom-list {
+    justify-content: center;
+  }
+
+  .about__container {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .about__gray-line {
+    height: 0;
+    width: 100%;
+    margin: 24px 0 36px;
+    border: 1px solid rgba(0, 0, 0, 0.11);
+  }
+
+  .about__stat-list {
+    justify-content: center;
+  }
+
+  .features__list {
+    display: flex;
+    overflow-x: scroll;
+  }
+
+  .features__item_big {
+    min-width: 580px;
+  }
+
+  .team__list {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+  }
+
+  .questions__list {
+    max-width: 100%;
+  }
+
+  .questions__item {
+    width: 100%;
+  }
+
+  .questions__image {
+    display: none;
+  }
+
+  .booking__image {
+    display: none;
+  }
+
+  .booking__form {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 960px) {
+  .work-hours {
+    display: none;
+  }
+
+  .header__nav {
+    display: none;
+  }
+
+  .header__contact {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+  }
 }
