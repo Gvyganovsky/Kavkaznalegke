@@ -250,87 +250,92 @@
 
     <section class="photos">
       <h2 class="photos__title title">Фотографии с маршрутов</h2>
-      <div class="photos-container container">
-        <button type="button" aria-label="Предыдущий слайд" class="arrow arrow_prev" data-prev-photos></button>
-        <div data-slider-photos role="group" aria-label="Слайдер" class="photos__slider">
-          <div class="photos__slide" data-image-photos data-index-photos="0">
-            <img src="./images/gallery-photo-img-01_580x746_802.webp" alt="Человек смотрит в даль" width="270"
-              height="350" loading="lazy" class="photos__image">
-          </div>
-          <div class="photos__slide" data-image-photos data-index-photos="1">
-            <img src="./images/gallery-photo-img-02_580x746_802.webp" alt="Человек смотрит в даль" width="270"
-              height="350" loading="lazy" class="photos__image">
-          </div>
-          <div class="photos__slide" data-image-photos data-index-photos="2">
-            <img src="./images/gallery-photo-img-03_580x746_802.webp" alt="Человек смотрит в даль" width="270"
-              height="350" loading="lazy" class="photos__image">
-          </div>
-          <div class="photos__slide" data-image-photos data-index-photos="3">
-            <img src="./images/gallery-photo-img-04_580x746_802.webp" alt="Человек смотрит в даль" width="270"
-              height="350" loading="lazy" class="photos__image">
-          </div>
-          <div class="photos__slide" data-image-photos data-index-photos="4">
-            <img src="./images/gallery-photo-img-05_580x746_802.webp" alt="Человек смотрит в даль" width="270"
-              height="350" loading="lazy" class="photos__image">
-          </div>
-          <div class="photos__slide" data-image-photos data-index-photos="5">
-            <img src="./images/gallery-photo-img-06_580x746_802.webp" alt="Человек смотрит в даль" width="270"
-              height="350" loading="lazy" class="photos__image">
-          </div>
-          <div class="photos__slide" data-image-photos data-index-photos="6">
-            <img src="./images/gallery-photo-img-07_580x746_802.webp" alt="Человек смотрит в даль" width="270"
-              height="350" loading="lazy" class="photos__image">
-          </div>
-          <div class="photos__slide" data-image-photos data-index-photos="7">
-            <img src="./images/gallery-photo-img-08_580x746_802.webp" alt="Человек смотрит в даль" width="270"
-              height="350" loading="lazy" class="photos__image">
-          </div>
-          <div class="photos__slide" data-image-photos data-index-photos="8">
-            <img src="./images/gallery-photo-img-09_580x746_802.webp" alt="Человек смотрит в даль" width="270"
-              height="350" loading="lazy" class="photos__image">
-          </div>
-          <div class="photos__slide" data-image-photos data-index-photos="9">
-            <img src="./images/gallery-photo-img-10_580x746_802.webp" alt="Человек смотрит в даль" width="270"
-              height="350" loading="lazy" class="photos__image">
-          </div>
-          <div class="photos__slide" data-image-photos data-index-photos="10">
-            <img src="./images/gallery-photo-img-11_580x746_802.webp" alt="Человек смотрит в даль" width="270"
-              height="350" loading="lazy" class="photos__image">
-          </div>
-          <div class="photos__slide" data-image-photos data-index-photos="11">
-            <img src="./images/gallery-photo-img-12_580x746_802.webp" alt="Человек смотрит в даль" width="270"
-              height="350" loading="lazy" class="photos__image">
-          </div>
-          <div class="photos__slide" data-image-photos data-index-photos="12">
-            <img src="./images/gallery-photo-img-13_580x746_802.webp" alt="Человек смотрит в даль" width="270"
-              height="350" loading="lazy" class="photos__image">
-          </div>
-          <div class="photos__slide" data-image-photos data-index-photos="13">
-            <img src="./images/gallery-photo-img-14_580x746_802.webp" alt="Человек смотрит в даль" width="270"
-              height="350" loading="lazy" class="photos__image">
-          </div>
-          <div class="photos__slide" data-image-photos data-index-photos="14">
-            <img src="./images/gallery-photo-img-15_580x746_802.webp" alt="Человек смотрит в даль" width="270"
-              height="350" loading="lazy" class="photos__image">
-          </div>
-          <div class="photos__slide" data-image-photos data-index-photos="15">
-            <img src="./images/gallery-photo-img-16_580x746_802.webp" alt="Человек смотрит в даль" width="270"
-              height="350" loading="lazy" class="photos__image">
-          </div>
-          <div class="photos__slide" data-image-photos data-index-photos="16">
-            <img src="./images/gallery-photo-img-17_580x746_802.webp" alt="Человек смотрит в даль" width="270"
-              height="350" loading="lazy" class="photos__image">
-          </div>
-          <div class="photos__slide" data-image-photos data-index-photos="17">
-            <img src="./images/gallery-photo-img-18_580x746_802.webp" alt="Человек смотрит в даль" width="270"
-              height="350" loading="lazy" class="photos__image">
-          </div>
-          <div class="photos__slide" data-image-photos data-index-photos="18">
-            <img src="./images/gallery-photo-img-19_580x746_802.webp" alt="Человек смотрит в даль" width="270"
-              height="350" loading="lazy" class="photos__image">
+      <div class="photos__container container">
+        <div class="photos__viewport">
+          <div data-slider-photos role="group" aria-label="Слайдер" class="photos__slider">
+            <div class="photos__slide" data-image-photos data-index-photos="0">
+              <img src="./images/gallery-photo-img-01_580x746_802.webp" alt="Человек смотрит в даль" width="270"
+                height="350" loading="lazy" class="photos__image">
+            </div>
+            <div class="photos__slide" data-image-photos data-index-photos="1">
+              <img src="./images/gallery-photo-img-02_580x746_802.webp" alt="Человек смотрит в даль" width="270"
+                height="350" loading="lazy" class="photos__image">
+            </div>
+            <div class="photos__slide" data-image-photos data-index-photos="2">
+              <img src="./images/gallery-photo-img-03_580x746_802.webp" alt="Человек смотрит в даль" width="270"
+                height="350" loading="lazy" class="photos__image">
+            </div>
+            <div class="photos__slide" data-image-photos data-index-photos="3">
+              <img src="./images/gallery-photo-img-04_580x746_802.webp" alt="Человек смотрит в даль" width="270"
+                height="350" loading="lazy" class="photos__image">
+            </div>
+            <div class="photos__slide" data-image-photos data-index-photos="4">
+              <img src="./images/gallery-photo-img-05_580x746_802.webp" alt="Человек смотрит в даль" width="270"
+                height="350" loading="lazy" class="photos__image">
+            </div>
+            <div class="photos__slide" data-image-photos data-index-photos="5">
+              <img src="./images/gallery-photo-img-06_580x746_802.webp" alt="Человек смотрит в даль" width="270"
+                height="350" loading="lazy" class="photos__image">
+            </div>
+            <div class="photos__slide" data-image-photos data-index-photos="6">
+              <img src="./images/gallery-photo-img-07_580x746_802.webp" alt="Человек смотрит в даль" width="270"
+                height="350" loading="lazy" class="photos__image">
+            </div>
+            <div class="photos__slide" data-image-photos data-index-photos="7">
+              <img src="./images/gallery-photo-img-08_580x746_802.webp" alt="Человек смотрит в даль" width="270"
+                height="350" loading="lazy" class="photos__image">
+            </div>
+            <div class="photos__slide" data-image-photos data-index-photos="8">
+              <img src="./images/gallery-photo-img-09_580x746_802.webp" alt="Человек смотрит в даль" width="270"
+                height="350" loading="lazy" class="photos__image">
+            </div>
+            <div class="photos__slide" data-image-photos data-index-photos="9">
+              <img src="./images/gallery-photo-img-10_580x746_802.webp" alt="Человек смотрит в даль" width="270"
+                height="350" loading="lazy" class="photos__image">
+            </div>
+            <div class="photos__slide" data-image-photos data-index-photos="10">
+              <img src="./images/gallery-photo-img-11_580x746_802.webp" alt="Человек смотрит в даль" width="270"
+                height="350" loading="lazy" class="photos__image">
+            </div>
+            <div class="photos__slide" data-image-photos data-index-photos="11">
+              <img src="./images/gallery-photo-img-12_580x746_802.webp" alt="Человек смотрит в даль" width="270"
+                height="350" loading="lazy" class="photos__image">
+            </div>
+            <div class="photos__slide" data-image-photos data-index-photos="12">
+              <img src="./images/gallery-photo-img-13_580x746_802.webp" alt="Человек смотрит в даль" width="270"
+                height="350" loading="lazy" class="photos__image">
+            </div>
+            <div class="photos__slide" data-image-photos data-index-photos="13">
+              <img src="./images/gallery-photo-img-14_580x746_802.webp" alt="Человек смотрит в даль" width="270"
+                height="350" loading="lazy" class="photos__image">
+            </div>
+            <div class="photos__slide" data-image-photos data-index-photos="14">
+              <img src="./images/gallery-photo-img-15_580x746_802.webp" alt="Человек смотрит в даль" width="270"
+                height="350" loading="lazy" class="photos__image">
+            </div>
+            <div class="photos__slide" data-image-photos data-index-photos="15">
+              <img src="./images/gallery-photo-img-16_580x746_802.webp" alt="Человек смотрит в даль" width="270"
+                height="350" loading="lazy" class="photos__image">
+            </div>
+            <div class="photos__slide" data-image-photos data-index-photos="16">
+              <img src="./images/gallery-photo-img-17_580x746_802.webp" alt="Человек смотрит в даль" width="270"
+                height="350" loading="lazy" class="photos__image">
+            </div>
+            <div class="photos__slide" data-image-photos data-index-photos="17">
+              <img src="./images/gallery-photo-img-18_580x746_802.webp" alt="Человек смотрит в даль" width="270"
+                height="350" loading="lazy" class="photos__image">
+            </div>
+            <div class="photos__slide" data-image-photos data-index-photos="18">
+              <img src="./images/gallery-photo-img-19_580x746_802.webp" alt="Человек смотрит в даль" width="270"
+                height="350" loading="lazy" class="photos__image">
+            </div>
           </div>
         </div>
-        <button type="button" aria-label="Следующий слайд" class="arrow arrow_next" data-next-photos></button>
+
+        <button type="button" aria-label="Предыдущий слайд" class="routes__prev arrow arrow_prev"
+          data-prev-photos></button>
+        <button type="button" aria-label="Следующий слайд" class="routes__next arrow arrow_next"
+          data-next-photos></button>
       </div>
       <div class="photos__dots" data-dots-photos></div>
     </section>

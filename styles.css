@@ -294,6 +294,8 @@ section {
 */
 
 .header {
+  margin: 0 auto;
+  max-width: 1920px;
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
@@ -359,6 +361,7 @@ section {
 }
 
 .header__bottom-list {
+  gap: 12px;
   justify-content: space-between;
 }
 
@@ -366,6 +369,7 @@ section {
   width: 260px;
   height: 150px;
   padding: 10px;
+  margin-top: 56px;
   position: relative;
   border-radius: 10px;
   background-color: var(--background-white);
@@ -473,13 +477,14 @@ section {
 */
 
 .benefits {
-  background-image: url("./images/benefits.webp");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  max-width: 100%;
+  margin: 0 auto;
   height: 1254px;
+  max-width: 1920px;
   position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("./images/benefits.webp");
 }
 
 .benefits__title {
@@ -586,22 +591,23 @@ section {
     ----------------------------------
 */
 
-.photos-container {
-  margin-top: 62px;
-  max-width: 1330px;
+.photos__container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  margin-top: 62px;
+  position: relative;
+  justify-content: center;
+}
+
+.photos__viewport {
+  overflow: hidden;
+  max-width: 1140px;
 }
 
 .photos__slider {
-  max-width: 1160px;
   gap: 30px;
   display: flex;
-  overflow-x: hidden;
   align-items: flex-end;
-  scroll-snap-type: x mandatory;
-  transition: transform 0.5s ease;
+  transition: transform 1s ease;
 }
 
 .photos__slide {
@@ -704,6 +710,7 @@ section {
 .reviews__slide {
   padding: 16px;
   min-width: 380px;
+  width: 380px;
   position: relative;
   border-radius: 10px;
   background-color: var(--background-white);
@@ -1190,3 +1197,6 @@ section {
     Media
     ----------------------------------
 */
+
+@media (max-width: 1366px) {
+}

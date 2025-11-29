@@ -1,6 +1,6 @@
 /*  
     ----------------------------------
-    1. Photos-slider
+    1. Photos
     ----------------------------------
 */
 
@@ -16,7 +16,10 @@ slidesPhotos.forEach((_, index) => {
   const dot = document.createElement("button");
   dot.classList.add("photos__dot");
   dot.setAttribute("aria-label", `Перейти к слайду ${index + 1}`);
-  dot.addEventListener("click", () => showSlide(index));
+  dot.addEventListener("click", () => {
+    currentIndex = index;
+    showSlide();
+  });
   dotsContainer.appendChild(dot);
 });
 
@@ -27,41 +30,36 @@ function updateDots() {
   });
 }
 
-function showSlide(index) {
-  if (index < 0) index = slidesPhotos.length - 2;
-  if (index == slidesPhotos.length - 1) index = 0;
-
-  currentIndex = index;
-
-  slidesPhotos.forEach((item) => {
+function updateTopImage() {
+  slidesPhotos.forEach((item, index) => {
     const img = item.querySelector(".photos__image");
-    if (parseInt(item.dataset.indexPhotos, 10) === currentIndex + 1) {
+    if (index === currentIndex + 1) {
       img.classList.add("photos__image_top");
     } else {
       img.classList.remove("photos__image_top");
     }
   });
+}
 
+function showSlide() {
+  sliderPhotos.style.transform = `translateX(-${currentIndex * 300}px)`;
   updateDots();
+  updateTopImage();
 }
 
 prevPhotos.addEventListener("click", () => {
-  showSlide(currentIndex - 1);
-  slidesPhotos[currentIndex].scrollIntoView({
-    behavior: "smooth",
-    block: "nearest",
-  });
+  currentIndex--;
+  if (currentIndex < 0) currentIndex = slidesPhotos.length - 1;
+  showSlide();
 });
 
 nextPhotos.addEventListener("click", () => {
-  showSlide(currentIndex + 1);
-  slidesPhotos[currentIndex].scrollIntoView({
-    behavior: "smooth",
-    block: "nearest",
-  });
+  currentIndex++;
+  if (currentIndex >= slidesPhotos.length - 1) currentIndex = 0;
+  showSlide();
 });
 
-showSlide(0);
+showSlide();
 
 /*  
     ----------------------------------
@@ -203,14 +201,14 @@ function showReviews() {
 
 prevReviews.addEventListener("click", () => {
   reviewsIndex--;
-  if (reviewsIndex < 0) reviewsIndex = reviews.length - 1;
+  if (reviewsIndex < 0) reviewsIndex = reviews.length - 3;
 
   showReviews();
 });
 
 nextReviews.addEventListener("click", () => {
   reviewsIndex++;
-  if (reviewsIndex >= reviews.length - 1) reviewsIndex = 0;
+  if (reviewsIndex >= reviews.length - 2) reviewsIndex = 0;
 
   showReviews();
 });
