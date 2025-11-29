@@ -217,7 +217,7 @@ section {
 .container {
   margin: 0 auto;
   padding: 0 10px;
-  max-width: 1200px;
+  max-width: 1220px;
 }
 
 .list {
@@ -619,6 +619,33 @@ section {
   width: 540px;
   height: 700px;
 }
+
+.photos__dots {
+  gap: 4px;
+  display: flex;
+  overflow: hidden;
+  margin: 20px auto 0;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.photos__dot {
+  width: 20px;
+  height: 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.3s;
+  background-color: var(--color-gray);
+}
+
+.photos__dot_active {
+  border-radius: 50%;
+  transition: background 0.3s;
+  background-color: var(--background-orange);
+}
+
 /*  
     ----------------------------------
     9. Reviews
@@ -626,14 +653,16 @@ section {
 */
 
 .reviews__container {
-  gap: 135px;
+  max-width: 100%;
+  margin-left: calc((100% - 1180px) / 2);
+  padding: 0 10px;
+  position: relative;
   display: flex;
+  gap: 135px;
   align-items: center;
-  justify-content: space-between;
 }
 
 .reviews__controls {
-  z-index: 1;
   max-width: 280px;
   background-color: var(--background-white);
 }
@@ -662,28 +691,32 @@ section {
   margin-top: 210px;
 }
 
+.reviews__slider-container {
+  overflow: hidden;
+}
+
 .reviews__slider {
   gap: 24px;
-  z-index: 2;
   display: flex;
+  transition: transform 1s ease;
 }
 
 .reviews__slide {
-  border-radius: 10px;
   padding: 16px;
-  width: 380px;
-  box-shadow: -1px 3px 10px rgba(0, 0, 0, 0.1);
-  background-color: var(--background-white);
+  min-width: 380px;
   position: relative;
+  border-radius: 10px;
+  background-color: var(--background-white);
+  box-shadow: -1px 3px 10px rgba(0, 0, 0, 0.1);
 }
 
 .reviews__star {
-  position: absolute;
-  right: 16px;
   top: -4px;
-  border-radius: 5px 5px 15px 15px;
+  right: 16px;
   width: 48px;
   height: 56px;
+  position: absolute;
+  border-radius: 5px 5px 15px 15px;
   background: linear-gradient(143deg, #ffb987 0%, #ff8a35 51.5%, #ff8a35 100%);
 
   gap: 4px;
@@ -732,20 +765,29 @@ section {
     ----------------------------------
 */
 
-.routes__content {
-  gap: 18px;
-  display: flex;
-  height: 640px;
-  padding: 16px;
+.routes__container {
   margin-top: 62px;
   position: relative;
+}
+
+.routes__viewport {
+  overflow: hidden;
+  height: 640px;
   border-radius: 10px;
   box-shadow: -1px 3px 10px rgba(0, 0, 0, 0.1);
 }
 
-.route {
-  overflow-y: auto;
-  scroll-behavior: smooth;
+.routes__slider {
+  display: flex;
+  height: 100%;
+  transition: transform 1s ease;
+}
+
+.routes__slide {
+  gap: 16px;
+  display: flex;
+  padding: 16px;
+  min-width: 100%;
 }
 
 .route__info {
@@ -817,20 +859,26 @@ section {
 .route__price-number {
   font-size: 24px;
   font-weight: 700;
-  color: #ff8a35;
+  color: var(--color-orange);
 }
 
 .route__description {
-  font-family: var(--font-family-secondary);
+  height: 100%;
   font-size: 18px;
-  line-height: 122%;
-  color: var(--color-black-lite);
   margin-top: 28px;
+  max-height: 200px;
+  line-height: 122%;
+  overflow-y: scroll;
+  color: var(--color-black-lite);
+  font-family: var(--font-family-secondary);
 }
 
 .route__places-list {
   gap: 10px;
-  margin-top: 36px;
+  margin: 36px 0;
+  max-height: 180px;
+  overflow-y: scroll;
+  padding: 10px 0;
 }
 
 .route__places-item {
@@ -892,7 +940,7 @@ section {
   margin-top: 16px;
   padding: 26px 20px;
   border-radius: 10px;
-  background: var(--background-white);
+  background-color: var(--background-white);
   box-shadow: -1px 3px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -921,14 +969,18 @@ section {
 }
 
 .questions__answer {
-  display: none;
+  opacity: 0;
+  max-height: 0;
   font-size: 20px;
-  margin-top: 30px;
+  overflow: hidden;
   color: var(--color-black-lite);
+  transition: max-height 1s ease-in, opacity 1s ease-in;
 }
 
-.questions__item.active .questions__answer {
-  display: block;
+.questions__item_active .questions__answer {
+  padding-top: 20px;
+  opacity: 1;
+  max-height: 500px;
 }
 
 /*  
@@ -968,6 +1020,10 @@ section {
   display: none;
 }
 
+.team__item:hover .team__text {
+  display: block;
+}
+
 .team__item:hover .team__image {
   width: 55px;
   height: 55px;
@@ -977,6 +1033,7 @@ section {
 .team__text {
   margin-top: 16px;
   line-height: 24px;
+  display: none;
 }
 
 .team__name {

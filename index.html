@@ -248,7 +248,7 @@
       </div>
     </section>
 
-    <!-- <section class="photos">
+    <section class="photos">
       <h2 class="photos__title title">Фотографии с маршрутов</h2>
       <div class="photos-container container">
         <button type="button" aria-label="Предыдущий слайд" class="arrow arrow_prev" data-prev-photos></button>
@@ -259,7 +259,7 @@
           </div>
           <div class="photos__slide" data-image-photos data-index-photos="1">
             <img src="./images/gallery-photo-img-02_580x746_802.webp" alt="Человек смотрит в даль" width="270"
-              height="350" loading="lazy" class="photos__image photos__image_top">
+              height="350" loading="lazy" class="photos__image">
           </div>
           <div class="photos__slide" data-image-photos data-index-photos="2">
             <img src="./images/gallery-photo-img-03_580x746_802.webp" alt="Человек смотрит в даль" width="270"
@@ -332,10 +332,11 @@
         </div>
         <button type="button" aria-label="Следующий слайд" class="arrow arrow_next" data-next-photos></button>
       </div>
-    </section> -->
+      <div class="photos__dots" data-dots-photos></div>
+    </section>
 
-    <!-- <section class="reviews">
-      <div class="reviews__container container">
+    <section class="reviews">
+      <div class="container reviews__container">
         <div class="reviews__controls">
           <h2 class="reviews__title title">Наши отзывы</h2>
           <div class="reviews__navigation">
@@ -347,127 +348,24 @@
           </button>
         </div>
 
-        <div class="reviews__slider" data-reviews-slider></div>
+        <div class="reviews__slider-container">
+          <div class="reviews__slider" data-reviews-slider></div>
+        </div>
       </div>
-    </section> -->
+    </section>
 
     <section class="routes" id="routes">
+      <h2 class="routes__title title">
+        Маршруты и походы по Северному Кавказу
+      </h2>
+
       <div class="routes__container container">
-        <h2 class="routes__title title">
-          Маршруты и походы по Северному Кавказу
-        </h2>
-
-        <div class="routes__content">
-          <img src="./images/dombai.webp" alt="Фотография с маршрута" class="routes__image">
-
-          <div class="route">
-            <ul class="route__info list">
-              <li class="route__info-item">
-                <p class="route__info-text">Воскресенье</p>
-                <img src="./images/arrow.svg" alt="Стрелка вправо" class="route__icon" />
-                <p class="route__info-text">Cуббота</p>
-              </li>
-              <li class="route__info-item">
-                <img src="./images/mark.svg" alt="Иконка метки" class="route__icon" />
-                <p class="route__info-text">70 км (пешком)</p>
-              </li>
-              <li class="route__info-item">
-                <img src="./images/date.svg" alt="иконка времени" class="routes__icon" />
-                <p class="route__info-text">7 дней</p>
-              </li>
-            </ul>
-
-            <h3 class="route__title title">
-              ГОРНЫЙ ЛАГЕРЬ В ДОМБАЕ
-            </h3>
-
-            <div class="route__difficulty">
-              <p class="route__difficulty-text">сложность</p>
-              <ul class="route__difficulty-list list">
-                <li class="route__difficulty-item route__difficulty-item_active"></li>
-                <li class="route__difficulty-item"></li>
-                <li class="route__difficulty-item"></li>
-                <li class="route__difficulty-item"></li>
-                <li class="route__difficulty-item"></li>
-              </ul>
-            </div>
-
-            <div class="route__price">
-              <span class="route__price-cost">стоимость</span>
-              <span class="route__price-number">от 33 400 ₽</span>
-            </div>
-
-            <p class="route__description">
-              Добро пожаловать в Домбай — волшебный уголок Кавказа, о
-              котором с восхищением пел Юрий Визбор! Здесь царят
-              неприступные вершины, изумрудные реки и мощные
-              водопады, которые словно оживают под ярким солнцем.
-              Бадукские озёра удивляют своей необыкновенной
-              красотой: невероятные оттенки синего и зелёного
-              сверкают, как драгоценные камни. Завораживающий шум
-              мощного водопада Алибек воплощает силу горной природы.
-              А гора Мусса Ачитара манит альпинистов и любителей
-              приключений своими шикарными видами, от которых
-              замирает сердце. Этот маршрут — настоящая находка для
-              первых шагов на Кавказе: побывав здесь однажды, вы
-              будете возвращаться снова и снова!
-            </p>
-
-            <ul class="route__places-list list">
-              <li class="route__places-item">
-                <img src="./images/markOrange.svg" alt="иконка места" class="routes__icon" />
-                <p class="route__place" itemprop="areaServed">
-                  посёлок Домбай
-                </p>
-              </li>
-              <li class="route__places-item">
-                <img src="./images/markOrange.svg" alt="иконка места" class="routes__icon" />
-                <p class="route__place" itemprop="areaServed">
-                  водопад Чучхур
-                </p>
-              </li>
-              <li class="route__places-item">
-                <img src="./images/markOrange.svg" alt="иконка места" class="routes__icon" />
-                <p class="route__place" itemprop="areaServed">
-                  водопад Алибек
-                </p>
-              </li>
-              <li class="route__places-item">
-                <img src="./images/markOrange.svg" alt="иконка места" class="routes__icon" />
-                <p class="route__place" itemprop="areaServed">
-                  река Теберда
-                </p>
-              </li>
-              <li class="route__places-item">
-                <img src="./images/markOrange.svg" alt="иконка места" class="routes__icon" />
-                <p class="route__place" itemprop="areaServed">
-                  Бадукские озёра
-                </p>
-              </li>
-              <li class="route__places-item">
-                <img src="./images/markOrange.svg" alt="иконка места" class="routes__icon" />
-                <p class="route__place" itemprop="areaServed">
-                  Тебердинский заповедник
-                </p>
-              </li>
-              <li class="route__places-item">
-                <img src="./images/markOrange.svg" alt="иконка места" class="routes__icon" />
-                <p class="route__place" itemprop="areaServed">
-                  водопад Шумка
-                </p>
-              </li>
-              <li class="route__places-item">
-                <img src="./images/markOrange.svg" alt="иконка места" class="routes__icon" />
-                <p class="route__place" itemprop="areaServed">
-                  гора Мусса-Ачитара
-                </p>
-              </li>
-            </ul>
-          </div>
-
-          <button class="routes__prev arrow arrow_prev"></button>
-          <button class="routes__next arrow arrow_next"></button>
+        <div class="routes__viewport">
+          <div class="routes__slider" data-routes-slider></div>
         </div>
+
+        <button class="routes__prev arrow arrow_prev" data-prev-slider></button>
+        <button class="routes__next arrow arrow_next" data-next-slider></button>
       </div>
     </section>
 
@@ -553,7 +451,7 @@
               </p>
             </li>
           </ul>
-          <img src="./images/info.png" alt="Фотографии с информацией" width="585" height="575"
+          <img src="./images/info.webp" alt="Фотографии с информацией" width="585" height="575"
             class="questions__image" />
         </div>
       </div>
@@ -587,7 +485,8 @@
             <p class="team__name">Илья Троицкий</p>
           </li>
           <li class="team__item">
-            <img class="team__image" src="./images/sergey-lutsenko.webp" alt="Сергей Луценко" width="280" height="360" />
+            <img class="team__image" src="./images/sergey-lutsenko.webp" alt="Сергей Луценко" width="280"
+              height="360" />
             <p class="team__text">Горы любят тех кто любит Горы!</p>
             <p class="team__name">Сергей Луценко</p>
           </li>
