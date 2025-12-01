@@ -149,7 +149,7 @@ table {
 
 @font-face {
   font-family: "Cirle";
-  src: url("/fonts/circe.woff2") format("woff2");
+  src: url("../fonts/circe.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -157,7 +157,7 @@ table {
 
 @font-face {
   font-family: "Bitcrusher";
-  src: url("./fonts/bitcrusher.woff2") format("woff2");
+  src: url("../fonts/bitcrusher.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -165,7 +165,7 @@ table {
 
 @font-face {
   font-family: "Inter";
-  src: url("./fonts/inter.woff2") format("woff2");
+  src: url("../fonts/inter.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -315,7 +315,7 @@ section {
 
 .main-background {
   background-size: cover;
-  background-image: url("./images/body-bg.webp");
+  background-image: url("../images/body-bg.webp");
 }
 
 .work-hours {
@@ -340,12 +340,12 @@ section {
 }
 
 .arrow_prev {
-  background-image: url("./images/arrow_1.svg");
+  background-image: url("../images/arrow_1.svg");
   transform: scaleX(-1);
 }
 
 .arrow_next {
-  background-image: url("./images/arrow_1.svg");
+  background-image: url("../images/arrow_1.svg");
 }
 
 .g-recaptcha {
@@ -364,7 +364,7 @@ section {
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
-  background-image: url("./images/header-background.webp");
+  background-image: url("../images/header-background.webp");
 }
 
 .header__container {

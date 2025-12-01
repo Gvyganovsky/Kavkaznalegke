@@ -154,12 +154,12 @@ function createReviews() {
   });
 
   slidesReview = document.querySelectorAll(".reviews__slide");
+  if (slidesReview.length > 0) {
+    slideWidth = slidesReview[0].offsetWidth; // вычисляем один раз
+  }
 }
 
-let slidesReview = sliderReviews.querySelectorAll(".reviews__slide");
-
 function showReviews() {
-  const slideWidth = slidesReview[0].offsetWidth;
   sliderReviews.style.transform = `translateX(-${
     reviewsIndex * (slideWidth + 24)
   }px)`;
@@ -168,15 +168,20 @@ function showReviews() {
 prevReviews.addEventListener("click", () => {
   reviewsIndex--;
   if (reviewsIndex < 0) reviewsIndex = reviews.length - 3;
-
   showReviews();
 });
 
 nextReviews.addEventListener("click", () => {
   reviewsIndex++;
   if (reviewsIndex >= reviews.length - 2) reviewsIndex = 0;
-
   showReviews();
+});
+
+window.addEventListener("resize", () => {
+  if (slidesReview.length > 0) {
+    slideWidth = slidesReview[0].offsetWidth;
+    showReviews();
+  }
 });
 
 createReviews();
@@ -460,7 +465,7 @@ const createRoute = () => {
           <p class="route__info-text">${item.daysInfo.end}</p>
         </li>
         <li class="route__info-item">
-          <img src="./images/mark.svg" alt="Иконка метки" class="route__icon" />
+          <img src="./images/mark.svg" alt="Иконка метки" width="21" height="21" class="route__icon" />
           <p class="route__info-text">${item.distance}</p>
         </li>
         <li class="route__info-item">

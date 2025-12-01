@@ -39,7 +39,7 @@
   padding-left: 68px;
   background-position: left;
   background-repeat: no-repeat;
-  background-image: url("./images/Mask-group.svg");
+  background-image: url("../images/Mask-group.svg");
 }
 
 .about__text-description {
@@ -111,7 +111,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url("./images/benefits.webp");
+  background-image: url("../images/benefits.webp");
 }
 
 .benefits__title {
