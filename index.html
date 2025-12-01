@@ -9,30 +9,14 @@
     Экскурсии по Северному Кавказу
   </title>
 
-  <style>
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <link rel="stylesheet" href="./css/critical.css" fetchpriority="high">
 
-    :root {
-      --color-white: #fff;
-      --color-orange: #ff8a35;
-      --color-black: #000;
-      --font-family-primary: "Cirle", sans-serif;
-    }
-
-    body {
-      font-family: var(--font-family-primary);
-    }
-  </style>
-
-  <link rel="preload" href="./css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="./css/styles.css" as="style" fetchpriority="low"
+    onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
     <link rel="stylesheet" href="./css/styles.css">
   </noscript>
+
 </head>
 
 <body>
