@@ -456,7 +456,7 @@ const createRoute = () => {
         <ul class="route__info list">
         <li class="route__info-item">
           <p class="route__info-text">${item.daysInfo.start}</p>
-          <img src="./images/arrow.svg" alt="Стрелка вправо" class="route__icon" />
+          <img src="./images/arrow.svg" alt="Стрелка вправо" class="route__icon" width="26" height="17" />
           <p class="route__info-text">${item.daysInfo.end}</p>
         </li>
         <li class="route__info-item">
@@ -464,7 +464,7 @@ const createRoute = () => {
           <p class="route__info-text">${item.distance}</p>
         </li>
         <li class="route__info-item">
-          <img src="./images/date.svg" alt="иконка времени" class="routes__icon" />
+          <img src="./images/date.svg" alt="иконка времени" width="21" height="21" class="routes__icon" />
           <p class="route__info-text">${item.duration}</p>
         </li>
       </ul>
@@ -500,7 +500,7 @@ const createRoute = () => {
           .map(
             (place) => `
           <li class="route__places-item">
-            <img src="./images/markOrange.svg" alt="иконка места" class="routes__icon" />
+            <img src="./images/markOrange.svg" alt="иконка места" width="16" height="21" class="routes__icon" />
             <p class="route__place" itemprop="areaServed">${place}</p>
           </li>
         `
