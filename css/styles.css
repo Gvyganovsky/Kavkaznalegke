@@ -1,238 +1,16 @@
 /*!
-    1. Reset CSS
-    2. Fonts
-    3. Default styles 
-    4. Header
-    5. About
-    6. Benefits
-    7. Features
-    8. Reviews
-    9. Routes
-    10. Questions
-    11. Team
-    12. Booking
-    13. Footer
-    14. Media
+    1. About
+    2. Benefits
+    3. Features
+    4. Reviews
+    5. Routes
+    6. Questions
+    7. Team
+    8. Booking
+    9. Footer
+    10. Media
     ----------------------------------
  */
-
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-body {
-  line-height: 1;
-}
-ol,
-ul {
-  list-style: none;
-}
-blockquote,
-q {
-  quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-/*  
-    ----------------------------------
-    1. Fonts
-    ----------------------------------
-*/
-
-@font-face {
-  font-family: "Inter";
-  src: url("../fonts/inter.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-/*  
-    ----------------------------------
-    1. About
-    ----------------------------------
-*/
-
-:root {
-  /* Цвета */
-  --color-white: #ffffff;
-  --color-orange: #ff8a35;
-  --color-black: #000000;
-  --color-gray: #a7a7a7;
-  --color-gray-middle: #d9d9d9;
-  --color-gray-dark: #fff2;
-  --color-black-lite: #3d3d3d;
-
-  --background-black: #000000;
-  --background-orange: #ff8a35;
-  --background-white: #ffffff;
-
-  /* Шрифты */
-  --font-family-primary: "Cirle", sans-serif;
-  --font-family-header: "Bitcrusher", sans-serif;
-}
-
-/*  
-    ----------------------------------
-    1. About
-    ----------------------------------
-*/
-
-.title {
-  font-size: 40px;
-  font-weight: 700;
-  text-align: center;
-  text-transform: uppercase;
-  font-family: var(--font-family-secondary);
-}
-
-.main-background {
-  background-size: cover;
-  background-image: url("../images/body-bg.webp");
-}
-
-.work-hours {
-  color: var(--color-white);
-  text-align: right;
-  filter: drop-shadow(0px 0px 6px black);
-}
-
-.arrow {
-  width: 40px;
-  height: 40px;
-  border: none;
-  cursor: pointer;
-  border-radius: 50px;
-  place-items: center;
-  transition: all 0.8s;
-  color: var(--color-orange);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: var(--background-white);
-  box-shadow: -1px 3px 10px rgba(0, 0, 0, 0.1);
-}
-
-
-.arrow_prev {
-  background-image: url("../images/arrow_1.svg");
-  transform: scaleX(-1);
-}
-
-.arrow_next {
-  background-image: url("../images/arrow_1.svg");
-}
-
-.g-recaptcha {
-  margin-top: 20px;
-}
 
 /*  
     ----------------------------------
@@ -257,7 +35,7 @@ table {
   padding-left: 68px;
   background-position: left;
   background-repeat: no-repeat;
-  background-image: url("../images/Mask-group.svg");
+  background-image: url("./images/Mask-group.svg");
 }
 
 .about__text-description {
@@ -329,7 +107,7 @@ table {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url("../images/benefits.webp");
+  background-image: url("./images/benefits.webp");
 }
 
 .benefits__title {
