@@ -1,6 +1,6 @@
 /*  
     ----------------------------------
-    1. Photos
+    1. Burger
     ----------------------------------
 */
 
@@ -34,61 +34,234 @@ burgerLinks.forEach((link) => {
 */
 
 const sliderPhotos = document.querySelector("[data-slider-photos]");
-const slidesPhotos = sliderPhotos.querySelectorAll("[data-image-photos]");
 const prevPhotos = document.querySelector("[data-prev-photos]");
 const nextPhotos = document.querySelector("[data-next-photos]");
-const dotsContainer = document.querySelector("[data-dots-photos]");
+const dataPhotos = [
+  {
+    src: "./images/gallery-photo-img-01_580x746_802.webp",
+    alt: "Человек смотрит в даль",
+    width: 270,
+    height: 350,
+    index: 0,
+  },
+  {
+    src: "./images/gallery-photo-img-02_580x746_802.webp",
+    alt: "Человек смотрит в даль",
+    width: 270,
+    height: 350,
+    index: 1,
+  },
+  {
+    src: "./images/gallery-photo-img-03_580x746_802.webp",
+    alt: "Человек смотрит в даль",
+    width: 270,
+    height: 350,
+    index: 2,
+  },
+  {
+    src: "./images/gallery-photo-img-04_580x746_802.webp",
+    alt: "Человек смотрит в даль",
+    width: 270,
+    height: 350,
+    index: 3,
+  },
+  {
+    src: "./images/gallery-photo-img-05_580x746_802.webp",
+    alt: "Человек смотрит в даль",
+    width: 270,
+    height: 350,
+    index: 4,
+  },
+  {
+    src: "./images/gallery-photo-img-06_580x746_802.webp",
+    alt: "Человек смотрит в даль",
+    width: 270,
+    height: 350,
+    index: 5,
+  },
+  {
+    src: "./images/gallery-photo-img-07_580x746_802.webp",
+    alt: "Человек смотрит в даль",
+    width: 270,
+    height: 350,
+    index: 6,
+  },
+  {
+    src: "./images/gallery-photo-img-08_580x746_802.webp",
+    alt: "Человек смотрит в даль",
+    width: 270,
+    height: 350,
+    index: 7,
+  },
+  {
+    src: "./images/gallery-photo-img-09_580x746_802.webp",
+    alt: "Человек смотрит в даль",
+    width: 270,
+    height: 350,
+    index: 8,
+  },
+  {
+    src: "./images/gallery-photo-img-10_580x746_802.webp",
+    alt: "Человек смотрит в даль",
+    width: 270,
+    height: 350,
+    index: 9,
+  },
+  {
+    src: "./images/gallery-photo-img-11_580x746_802.webp",
+    alt: "Человек смотрит в даль",
+    width: 270,
+    height: 350,
+    index: 10,
+  },
+  {
+    src: "./images/gallery-photo-img-12_580x746_802.webp",
+    alt: "Человек смотрит в даль",
+    width: 270,
+    height: 350,
+    index: 11,
+  },
+  {
+    src: "./images/gallery-photo-img-13_580x746_802.webp",
+    alt: "Человек смотрит в даль",
+    width: 270,
+    height: 350,
+    index: 12,
+  },
+  {
+    src: "./images/gallery-photo-img-14_580x746_802.webp",
+    alt: "Человек смотрит в даль",
+    width: 270,
+    height: 350,
+    index: 13,
+  },
+  {
+    src: "./images/gallery-photo-img-15_580x746_802.webp",
+    alt: "Человек смотрит в даль",
+    width: 270,
+    height: 350,
+    index: 14,
+  },
+  {
+    src: "./images/gallery-photo-img-16_580x746_802.webp",
+    alt: "Человек смотрит в даль",
+    width: 270,
+    height: 350,
+    index: 15,
+  },
+  {
+    src: "./images/gallery-photo-img-17_580x746_802.webp",
+    alt: "Человек смотрит в даль",
+    width: 270,
+    height: 350,
+    index: 16,
+  },
+  {
+    src: "./images/gallery-photo-img-18_580x746_802.webp",
+    alt: "Человек смотрит в даль",
+    width: 270,
+    height: 350,
+    index: 17,
+  },
+  {
+    src: "./images/gallery-photo-img-19_580x746_802.webp",
+    alt: "Человек смотрит в даль",
+    width: 270,
+    height: 350,
+    index: 18,
+  },
+];
 
-let currentIndex = 0;
+let currentIndexPhotos = 0;
+const slideWidthPhotos = 300;
 
-slidesPhotos.forEach((_, index) => {
-  const dot = document.createElement("button");
-  dot.classList.add("photos__dot");
-  dot.setAttribute("aria-label", `Перейти к слайду ${index + 1}`);
-  dot.addEventListener("click", () => {
-    currentIndex = index;
-    showSlide();
+const createPhotos = () => {
+  dataPhotos.forEach((item) => {
+    const img = document.createElement("img");
+    img.src = item.src;
+    img.alt = item.alt;
+    img.width = item.width;
+    img.height = item.height;
+    img.dataset.index = item.index;
+    img.classList.add("photos__image");
+    sliderPhotos.appendChild(img);
   });
-  dotsContainer.appendChild(dot);
-});
+  for (let i = 0; i < 3; i++) {
+    const clone = sliderPhotos.children[i].cloneNode(true);
+    sliderPhotos.appendChild(clone);
+  }
+  const clone =
+    sliderPhotos.children[sliderPhotos.children.length - 4].cloneNode(true);
+  sliderPhotos.insertBefore(clone, sliderPhotos.firstChild);
+};
 
-function updateDots() {
-  const dots = dotsContainer.querySelectorAll(".photos__dot");
-  dots.forEach((dot, index) => {
-    dot.classList.toggle("photos__dot_active", index === currentIndex);
-  });
-}
+const updateTopClass = () => {
+  const images = sliderPhotos.querySelectorAll(".photos__image");
+  images.forEach((img) => img.classList.remove("photos__image_top"));
+  const domIndex = currentIndexPhotos + 2;
+  const targetImage = sliderPhotos.children[domIndex];
+  if (targetImage) {
+    targetImage.classList.add("photos__image_top");
+  }
+};
 
-function updateTopImage() {
-  slidesPhotos.forEach((item, index) => {
-    const img = item.querySelector(".photos__image");
-    if (index === currentIndex) {
-      img.classList.add("photos__image_top");
-    } else {
-      img.classList.remove("photos__image_top");
-    }
-  });
-}
+const initPhotos = () => {
+  sliderPhotos.style.transition = "none";
+  sliderPhotos.style.transform = `translateX(-${
+    slideWidthPhotos * (currentIndexPhotos + 1)
+  }px)`;
+  updateTopClass();
+};
 
-function showSlide() {
-  sliderPhotos.style.transform = `translateX(-${currentIndex * 300}px)`;
-  updateDots();
-  updateTopImage();
-}
+const prevPhotosSlide = () => {
+  currentIndexPhotos--;
+  sliderPhotos.style.transition = "transform 0.5s ease-in-out";
+  sliderPhotos.style.transform = `translateX(-${
+    slideWidthPhotos * (currentIndexPhotos + 1)
+  }px)`;
+  sliderPhotos.addEventListener(
+    "transitionend",
+    () => {
+      if (currentIndexPhotos < 0) {
+        currentIndexPhotos = dataPhotos.length - 1;
+        sliderPhotos.style.transition = "none";
+        sliderPhotos.style.transform = `translateX(-${
+          slideWidthPhotos * (currentIndexPhotos + 1)
+        }px)`;
+      }
+      updateTopClass();
+    },
+    { once: true }
+  );
+};
 
-prevPhotos.addEventListener("click", () => {
-  currentIndex--;
-  if (currentIndex < 0) currentIndex = slidesPhotos.length - 1;
-  showSlide();
-});
+const nextPhotosSlide = () => {
+  currentIndexPhotos++;
+  sliderPhotos.style.transition = "transform 0.5s ease-in-out";
+  sliderPhotos.style.transform = `translateX(-${
+    slideWidthPhotos * (currentIndexPhotos + 1)
+  }px)`;
+  sliderPhotos.addEventListener(
+    "transitionend",
+    () => {
+      if (currentIndexPhotos >= dataPhotos.length) {
+        currentIndexPhotos = 0;
+        sliderPhotos.style.transition = "none";
+        sliderPhotos.style.transform = `translateX(-${
+          slideWidthPhotos * (currentIndexPhotos + 1)
+        }px)`;
+      }
+      updateTopClass();
+    },
+    { once: true }
+  );
+};
 
-nextPhotos.addEventListener("click", () => {
-  currentIndex++;
-  if (currentIndex >= slidesPhotos.length - 1) currentIndex = 0;
-  showSlide();
-});
+prevPhotos.addEventListener("click", prevPhotosSlide);
+nextPhotos.addEventListener("click", nextPhotosSlide);
 
-showSlide();
+createPhotos();
+initPhotos();
 
 /*  
     ----------------------------------
