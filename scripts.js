@@ -451,7 +451,7 @@ const createRoute = () => {
     route.innerHTML = `
       <img src="${item.image.src}" alt="${
       item.image.alt
-    }" class="route__image" />
+    }" width="480" height="600" class="route__image" />
  <div class="routes__content">
         <ul class="route__info list">
         <li class="route__info-item">
@@ -493,7 +493,7 @@ const createRoute = () => {
 
       <img src="${item.image.src}" alt="${
       item.image.alt
-    }" class="route__image_adapt" />
+    }" width="500" height="600" class="route__image_adapt" />
 
       <ul class="route__places-list list">
         ${item.places
