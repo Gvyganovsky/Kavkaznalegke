@@ -776,6 +776,83 @@ section {
 
 /*  
     ----------------------------------
+    8. Photos
+    ----------------------------------
+*/
+
+.photos {
+  position: relative;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.texture-left {
+  top: 30px;
+  left: 360px;
+  position: absolute;
+}
+
+.texture-right {
+  right: 0;
+  top: -20px;
+  position: absolute;
+}
+
+.photos__container {
+  margin-top: 62px;
+  position: relative;
+}
+
+.photos__slider {
+  height: 600px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide {
+  width: 270px;
+  height: 350px;
+  position: absolute;
+}
+
+.photos__image {
+  width: 100%;
+  height: 100%;
+  border-radius: 22px;
+  object-fit: cover;
+}
+
+.slide-active {
+  transform: scale(1.5);
+  z-index: 2;
+}
+
+.slide-next {
+  transform: translateX(380px);
+  z-index: 1;
+}
+
+.slide-prev {
+  transform: translateX(-380px);
+  z-index: 1;
+}
+
+.photos__prev {
+  position: absolute;
+  top: 50%;
+  left: -60px;
+}
+
+.photos__next {
+  position: absolute;
+  top: 50%;
+  right: -60px;
+}
+
+/*  
+    ----------------------------------
     9. Routes
     ----------------------------------
 */
@@ -1280,6 +1357,18 @@ section {
   .route__places-list {
     max-height: none;
     margin: 24px 0 0;
+  }
+
+  .photos__prev {
+    top: 100%;
+    left: 40px;
+    margin-top: 41px;
+  }
+
+  .photos__next {
+    top: 100%;
+    right: 40px;
+    margin-top: 41px;
   }
 
   .routes__prev {

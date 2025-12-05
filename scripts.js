@@ -29,6 +29,43 @@ burgerLinks.forEach((link) => {
 
 /*  
     ----------------------------------
+    2. Photos
+    ----------------------------------
+*/
+
+const slides = document.querySelectorAll(".slide");
+const prevBtn = document.querySelector("[data-prev-photos]");
+const nextBtn = document.querySelector("[data-next-photos]");
+const slideCount = slides.length;
+let slideIndex = 1;
+
+function updateSlider() {
+  const nextSlide = (slideIndex + 1) % slideCount;
+  const prevSlide = (slideIndex - 1 + slideCount) % slideCount;
+
+  document.querySelector(".slide-active")?.classList.remove("slide-active");
+  document.querySelector(".slide-next")?.classList.remove("slide-next");
+  document.querySelector(".slide-prev")?.classList.remove("slide-prev");
+
+  slides[slideIndex].classList.add("slide-active");
+  slides[nextSlide].classList.add("slide-next");
+  slides[prevSlide].classList.add("slide-prev");
+}
+
+nextBtn.addEventListener("click", () => {
+  slideIndex = (slideIndex + 1) % slideCount;
+  updateSlider();
+});
+
+prevBtn.addEventListener("click", () => {
+  slideIndex = (slideIndex - 1 + slideCount) % slideCount;
+  updateSlider();
+});
+
+updateSlider();
+
+/*  
+    ----------------------------------
     2. Reviews
     ----------------------------------
 */
